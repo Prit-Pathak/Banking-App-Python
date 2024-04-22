@@ -1,0 +1,6 @@
+pyodbc
+regex
+flask
+azure-keyvault-secrets
+azure-identity
+python-dotenv
