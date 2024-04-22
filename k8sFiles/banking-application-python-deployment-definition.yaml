@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banking-application-python-deployment
+  labels:
+    app: banking-app-python
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: banking-app-python
+  template:
+    metadata:
+      labels:
+        app: banking-app-python
+    spec:
+      containers:
+      - name: banking-application
+        image: madhutestregistryv1.azurecr.io/banking-app:v1
+        stdin: true 
+        tty: true 
+        ports:
+        - containerPort: 80
